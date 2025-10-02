@@ -86,10 +86,10 @@ Or use Docker directly:
 
 ```bash
 # Build
-docker build -t pug-viewer .
+docker build -t template-app .
 
 # Run
-docker run -p 3001:3001 pug-viewer
+docker run -p 3001:3001 template-app
 ```
 
 ### API Endpoints
