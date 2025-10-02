@@ -1,4 +1,4 @@
-# Pug Viewer
+# React Vite Express Template
 
 A full-stack application built with React, Vite, TypeScript, and Express.
 
