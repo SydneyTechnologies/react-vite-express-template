@@ -1,5 +1,5 @@
 # Build stage
-FROM node:20-alpine AS builder
+FROM node:24-alpine3.21 AS builder
 
 WORKDIR /app
 
@@ -19,7 +19,7 @@ RUN npm run build
 RUN npm run build:server
 
 # Production stage
-FROM node:20-alpine AS production
+FROM node:24-alpine3.21 AS production
 
 WORKDIR /app
 
@@ -27,7 +27,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install production dependencies only
-RUN npm ci --only=production
+RUN npm ci --omit=dev
 
 # Copy built assets from builder
 COPY --from=builder /app/dist ./dist
